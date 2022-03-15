@@ -4013,7 +4013,7 @@
       "cliente": "Ciclano da Silva",
       "produto": "Pizza Portuguesa",
       "valor": 27.9,
-      "entregue": true,
+      "entregue": false,
       "timestamp": "2022-03-15T16:54:46.115Z"
     }
   ]

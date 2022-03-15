@@ -4004,15 +4004,17 @@
       "id": 502,
       "cliente": "Beltrano",
       "produto": "Pizza Calabresa",
+      "valor": 29.9,
+      "entregue": false,
       "timestamp": "2022-03-14T00:30:47.057Z"
     },
     {
       "id": 503,
       "cliente": "Ciclano da Silva",
-      "produto": "Pizza Baiana",
+      "produto": "Pizza Portuguesa",
       "valor": 27.9,
       "entregue": true,
-      "timestamp": "2022-03-15T00:58:47.272Z"
+      "timestamp": "2022-03-15T16:54:46.115Z"
     }
   ]
 }

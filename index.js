@@ -56,11 +56,10 @@ app.put("/pedidos", async (req, res, next) => {
             data.pedidos[index].produto = pedido.produto
             data.pedidos[index].valor = pedido.valor
             data.pedidos[index].entregue = pedido.entregue
-            data.pedidos.timestamp = global.dateTime
-            console.log(data.pedidos.timestamp)
-            res.send(pedido)
+            data.pedidos[index].timestamp = global.dateTime
         }
-
+        await writeFile(global.fileName, JSON.stringify(data, null, 2))
+        res.send(pedido)
     } catch (err) {
         next(err)
     }
@@ -68,11 +67,16 @@ app.put("/pedidos", async (req, res, next) => {
 
 app.patch("/pedidos", async (req, res, next) => {
     try {
-
-
-
-
-
+        let pedido = req.body
+        const data = JSON.parse(await readFile(global.fileName))
+        const index = data.pedidos.findIndex(i => i.id === pedido.id)
+        if (data.pedidos[index].entregue === true || false) {
+            data.pedidos[index].entregue = pedido.entregue
+        } else {
+            res.send("O valor do campo entregue não é valido")
+        }
+        await writeFile(global.fileName, JSON.stringify(data, null, 2))
+        res.send(pedido)
     } catch (err) {
         next(err)
     }

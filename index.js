@@ -1,7 +1,6 @@
 import express from "express"
 import { promises as fs } from "fs"
 const { readFile, writeFile, appendFile } = fs
-//import pedidosRouter from "./routes/pedidos.js"
 
 global.fileName = "pedidos.json"
 global.dateTime = new Date()
